@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Memo{% endblock %}
+
+{% block body %}
+
+
+
+<div class="container">
+
+        <h1 class="mt-5">Memo {{memo.id}}</h1>
+
+        <div>
+            <h4 class="mt-5">contenu : </h4>
+            <div class="card p-4 col-md-4 ">
+            {# {% if memo.createdAt|date_modify("+" ~ memo.expiration|trans ~ " min" )|date(" h:i ") < "now"|date("h:i") %}
+                 expiré   
+            {% else %}
+                        <p>{{memo.contenu}}</p> 
+            {% endif %} #}
+                
+                <p>{{memo.contenu}}</p>
+            </div>
+        </div>
+
+        <div>
+                <h4 class="mt-5">Heure d'expiration</h4>
+                <p>{{memo.createdAt|date_modify("+" ~ memo.expiration|trans ~ " min" )|date(" h:i ")}}</p>
+        </div>
+
+        <div>
+                <h4 class="mt-5">Lien vers ce memo</h4>
+                <p> http://127.0.0.1:8000/{{memo.id}} </p>
+        </div>
+
+</div>
+    
+
+    
+
+    
+
+    
+
+    
+{% endblock %}
